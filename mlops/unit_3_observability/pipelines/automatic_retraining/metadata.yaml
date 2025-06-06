@@ -78,5 +78,5 @@ tags:
 - retraining
 type: python
 uuid: automatic_retraining
-variables_dir: /root/.mage_data/unit_3_observability
+variables_dir: /home/src/mage_data/unit_3_observability
 widgets: []
