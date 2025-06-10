@@ -1,0 +1,100 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: homework_03/data_loaders/taxi_data_prep.py
+  downstream_blocks:
+  - data_transform
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: Taxi Data Prep
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: taxi_data_prep
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: homework_03/transformers/data_transform.py
+  downstream_blocks:
+  - vector_transform
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: Data Transform
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - taxi_data_prep
+  uuid: data_transform
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: homework_03/transformers/vector_transform.py
+  downstream_blocks:
+  - data_exporter
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: vector_transform
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - data_transform
+  uuid: vector_transform
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: homework_03/data_exporters/data_exporter.py
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: Data exporter
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - vector_transform
+  uuid: data_exporter
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2025-06-06 23:08:29.080268+00:00'
+data_integration: null
+description: Homework 03
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: Homework 03
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags:
+- hw_03
+type: python
+uuid: homework_03
+variables_dir: /home/src/mage_data/homework_03
+widgets: []
